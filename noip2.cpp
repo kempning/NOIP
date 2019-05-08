@@ -1,21 +1,23 @@
-#include <iostream>
-#include <math.h>
-
+#include <bits/stdc++.h>
 using namespace std;
-void prime(int n);
-int main()
+int getsum(int n,int k);
+int main(int argc, char** arg)
 {
-    int n, k;
-    cin >> n >> k;
-    prime(n);
+    int prime[1120][2],i=0,n=0,k=0;
+    string fileName = "prime.txt";
 
-}
-void prime(int n){
-    for(int i = 2; i < n; i++)
-    for(int j = 2; j < i; j++)
-    {
-        
+    ifstream prime_input (fileName.c_str());
+    if(!prime_input){
+        cout<<"can't open file:"<<fileName<<endl;
+        return 0;
     }
-    
-    
+    while(!prime_input.eof()){
+        prime_input >> prime[i++][0];
+    }
+    cin>>n>>k;
+    cout<<getsum(n,k)<<endl;
+}
+
+int getsum(int n,int k){
+    if()
 }
